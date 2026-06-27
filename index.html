@@ -309,7 +309,9 @@ function updateFaceOpacity(val){
     if(mesh.material){
       mesh.material.opacity = faceOpacityValue;
       mesh.material.transparent = true;
-      mesh.material.depthWrite = false; // Esta linha corrige o conflito das faces
+      mesh.material.depthWrite = false;
+      mesh.material.depthTest = true;
+      mesh.material.alphaTest = 0.05;
     }
   });
 }
