@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Méron Metalpha v0.6 – Ligações Merônicas (Do Metalpha ao Heneicosalpha)</title>
+<title>Méron Metalpha v0.6 – Meronic Connections (From Metalpha to Heneicosalpha)</title>
 <script src="https://cdn.tailwindcss.com"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -54,7 +54,7 @@
   .fine-control { display: flex; align-items: center; gap: 10px; margin-top: 8px; }
   .fine-input { width: 88px; background: #0f1624; border: 1px solid #33405f; color: #d6e3ff; border-radius: 8px; padding: 7px 8px; font-family: "Fragment Mono", monospace; font-size: 13.5px; text-align: center; }
 
-  /* >>> Correção para destacar o radio selecionado <<< */
+  /* >>> Fix to highlight selected radio <<< */
   .chip input[type="radio"]:checked + span {
     background-color: #2563eb; /* azul */
     color: white;
@@ -74,28 +74,28 @@
 <aside id="panel">
   <div class="panel-inner">
     <div class="mb-5">
-      <div class="text-[20px] tracking-widest text-[#7d8caa] uppercase font-bold mb-1">Simulador Merônico</div>
-      <h1 class="text-[18px] leading-tight font-[700] tracking-[-0.015em] text-[#f0f4ff]">Ligações Merônicas</h1>
-      <p class="text-[14.5px] text-[#8d9bb7] mt-1.5">Do Metalpha ao Heneicosalpha</p>
+      <div class="text-[20px] tracking-widest text-[#7d8caa] uppercase font-bold mb-1">Meronic Simulator</div>
+      <h1 class="text-[18px] leading-tight font-[700] tracking-[-0.015em] text-[#f0f4ff]">Meronic Connections</h1>
+      <p class="text-[14.5px] text-[#8d9bb7] mt-1.5">From Metalpha to Heneicosalpha</p>
     </div>
 
     <div>
-      <div class="sec-title mb-3">Número Mérons Metalpha (número de massa)</div>
+      <div class="sec-title mb-3">Number of Metalpha Merons (mass number)</div>
       <div id="meronCountContainer" class="grid grid-cols-7 gap-2 mb-4"></div>
-      <div class="text-center text-xs text-[#7f8daa]" id="meronCountVal">1 Mérons</div>
-	      <div class="text-center mt-2 text-[12.5px] text-[#b8c6e5] font-medium" id="meronInfo">Méron Metalpha (12 Ca) – Massa 1</div>
+      <div class="text-center text-xs text-[#7f8daa]" id="meronCountVal">1 Meron</div>
+	      <div class="text-center mt-2 text-[12.5px] text-[#b8c6e5] font-medium" id="meronInfo">Metalpha Meron (12 Ca) – Mass 1</div>
     </div>
 
     <div class="divider"></div>
 
     <div>
-      <div class="sec-title mb-3">Rotação Merônica</div>
+      <div class="sec-title mb-3">Meronic Rotation</div>
       <div class="flex items-center gap-3 mb-3">
-        <button id="rotateToggle" class="btn-primary">Pausar</button>
-        <div class="text-[12px] text-[#7f8daa]">Giro orbital conjunto</div>
+        <button id="rotateToggle" class="btn-primary">Pause</button>
+        <div class="text-[12px] text-[#7f8daa]">Joint orbital spin</div>
       </div>
       <div class="flex justify-between text-[11px] text-[#6f7f9e] mb-1">
-        <span>Velocidade</span>
+        <span>Speed</span>
         <span class="mono text-[#b6c6e4]" id="rotateSpeedVal">0.0015</span>
       </div>
       <input type="range" id="rotateSpeed" min="0" max="0.01" step="0.0001" value="0.0015">
@@ -104,66 +104,66 @@
     <div class="divider"></div>
 
     <div>
-      <div class="sec-title mb-2">Distância Intermerônica</div>
+      <div class="sec-title mb-2">Intermeronic Distance</div>
       <div class="flex items-center justify-between mb-1">
-        <span class="text-[12.5px] text-[#9baacc]">Distância entre Cuboctaedros</span>
+        <span class="text-[12.5px] text-[#9baacc]">Distance between Cuboctahedrons</span>
         <span class="mono text-[13px] text-[#d6e3ff]" id="interMeronDistVal">0.0</span>
       </div>
       <input type="range" id="interMeronDist" min="0" max="400" step="1" value="0">
-      <div class="hint mt-2">Em <b>0.0</b>, os Cuboctaedros se tocam vértice a vértice.</div>
+      <div class="hint mt-2">At <b>0.0</b>, the Cuboctahedrons touch vertex to vertex.</div>
     </div>
 
     <div class="divider"></div>
 
     <div>
-      <div class="sec-title mb-3">Física de Intersecção</div>
+      <div class="sec-title mb-3">Intersection Physics</div>
       <label class="flex items-center gap-3 cursor-pointer text-[13.5px] text-[#c4cfe2]">
         <input class="check" type="checkbox" id="autoAlignSpins">
-        <span>Auto-Sincronizar Spins (Ligação)</span>
+        <span>Auto-Synchronize Spins (Bond)</span>
       </label>
     </div>
 
     <div class="divider"></div>
 
     <div>
-      <div class="sec-title mb-2">Distância Alpha (aresta local)</div>
+      <div class="sec-title mb-2">Alpha Distance (local edge)</div>
       <div class="flex items-center justify-between mb-1">
-        <span class="text-[12.5px] text-[#9baacc]">Escala do cuboctaedro</span>
+        <span class="text-[12.5px] text-[#9baacc]">Cuboctahedron scale</span>
         <span class="mono text-[13px] text-[#d6e3ff]" id="alphaDistanceVal">1.732</span>
       </div>
       <input type="range" id="alphaDistance" disabled min="1.732" max="1.732" step="0.001" value="1.732" class="mb-3">
-      <div class="text-[11px] text-[#6f7f9e] mt-1">Da travada = √3 ≈ 1.732 (tangência dos CiM a 120°)</div>
+      <div class="text-[11px] text-[#6f7f9e] mt-1">Locked = √3 ≈ 1.732 (CiM tangency at 120°)</div>
     </div>
 
     <div class="divider"></div>
 
     <div>
-      <div class="sec-title mb-3">Visualização</div>
+      <div class="sec-title mb-3">Visualization</div>
       <div class="space-y-[11px] text-[13.5px] text-[#c4cfe2]">
-        <label class="flex items-center gap-3 cursor-pointer"><input class="check" type="checkbox" id="showVectors" checked> <span>Mostrar Eixos Alpha</span></label>
-        <label class="flex items-center gap-3 cursor-pointer"><input class="check" type="checkbox" id="showEdges" checked> <span>Mostrar Arestas</span></label>
-        <label class="flex items-center gap-3 cursor-pointer"><input class="check" type="checkbox" id="showTriades"> <span>Mostrar Faces (Tríades)</span></label>
-        <label class="flex items-center gap-3 cursor-pointer"><input class="check" type="checkbox" id="showFaces" checked> <span>Mostrar Faces Translucidas</span></label>
-        <label class="flex items-center gap-3 cursor-pointer"><input class="check" type="checkbox" id="showLabels"> <span>Mostrar Rótulos Cα</span></label>
+        <label class="flex items-center gap-3 cursor-pointer"><input class="check" type="checkbox" id="showVectors" checked> <span>Show Alpha Axes</span></label>
+        <label class="flex items-center gap-3 cursor-pointer"><input class="check" type="checkbox" id="showEdges" checked> <span>Show Edges</span></label>
+        <label class="flex items-center gap-3 cursor-pointer"><input class="check" type="checkbox" id="showTriades"> <span>Show Faces (Triads)</span></label>
+        <label class="flex items-center gap-3 cursor-pointer"><input class="check" type="checkbox" id="showFaces" checked> <span>Show Translucent Faces</span></label>
+        <label class="flex items-center gap-3 cursor-pointer"><input class="check" type="checkbox" id="showLabels"> <span>Show Cα Labels</span></label>
       </div>
     </div>
 
     <div class="divider"></div>
 
     <div>
-      <div class="sec-title mb-2">Opacidade Cuboctaedros</div>
+      <div class="sec-title mb-2">Cuboctahedrons Opacity</div>
       <div class="flex items-center justify-between mb-1">
-        <span class="text-[12.5px] text-[#9baacc]">Transparência das camadas merônicas</span>
+        <span class="text-[12.5px] text-[#9baacc]">Transparency of meronic layers</span>
         <span class="mono text-[13px] text-[#d6e3ff]" id="faceOpacityVal">0.50</span>
       </div>
       <input type="range" id="faceOpacity" min="0.05" max="1" step="0.01" value="0.5">
-      <div class="hint mt-1">Mantém cores: branco, violeta, azul, verde.</div>
+      <div class="hint mt-1">Keeps colors: white, violet, blue, green.</div>
     </div>
 
     <div class="divider"></div>
 
     <div>
-      <div class="sec-title mb-2">Número de Meridianos dos Compalphas</div>
+      <div class="sec-title mb-2">Number of Compalpha Meridians</div>
 <div class="flex gap-2 flex-wrap">
   <label class="chip">
     <input type="radio" name="meridians" value="12" class="sr-only">
@@ -180,14 +180,14 @@
 </div>
 <label class="flex items-center gap-3 cursor-pointer mt-4 text-[13.5px]">
   <input type="checkbox" id="emphasizeMeridians" class="check">
-  <span>Realce Meridianos</span>
+  <span>Highlight Meridians</span>
 </label>
     </div>
 
     <div class="divider"></div>
 
     <div>
-      <div class="sec-title mb-3">Tipos de Círculos e seus raios</div>
+      <div class="sec-title mb-3">Circle Types and their radii</div>
       <div class="grid grid-cols-2 gap-x-6 gap-y-[10px] text-[13px] text-[#c2cee4]">
         <label class="flex items-center gap-2 cursor-pointer"><input type="checkbox" class="check layer-toggle" data-layer="0" checked><span><span class="legend-dot" style="background:#ffffff"></span>CiMe - R 0.464</span></label>
         <label class="flex items-center gap-2 cursor-pointer"><input type="checkbox" class="check layer-toggle" data-layer="1" checked><span><span class="legend-dot" style="background:#446dff"></span>CM - R 1.000</span></label>
@@ -201,26 +201,26 @@
     <div class="divider"></div>
     <div class="divider"></div>
 <div>
-      <div class="sec-title mb-3">Posição da Câmera</div>
+      <div class="sec-title mb-3">Camera Position</div>
       <div class="flex flex-wrap gap-2">
-        <button class="cam-btn" data-cam="geral">Vista Geral</button>
-        <button class="cam-btn" data-cam="topo">Topo</button>
-        <button class="cam-btn" data-cam="frente">Frente</button>
+        <button class="cam-btn" data-cam="geral">General View</button>
+        <button class="cam-btn" data-cam="topo">Top</button>
+        <button class="cam-btn" data-cam="frente">Front</button>
       </div>
-      <button id="saveConfig" class="mt-4 w-full btn-primary">💾 Salvar Configurações</button>
-      <button id="loadConfig" class="mt-2 w-full bg-[#1a2438] hover:bg-[#25334f] border border-[#3a5d9e] text-[#a8c0ff] py-2 rounded-xl text-sm">📂 Carregar Configurações</button>
-      <button id="autoVaryBtn" class="mt-2 w-full cam-btn">🔄 Animação Automática Alpha</button>
+      <button id="saveConfig" class="mt-4 w-full btn-primary">💾 Save Settings</button>
+      <button id="loadConfig" class="mt-2 w-full bg-[#1a2438] hover:bg-[#25334f] border border-[#3a5d9e] text-[#a8c0ff] py-2 rounded-xl text-sm">📂 Load Settings</button>
+      <button id="autoVaryBtn" class="mt-2 w-full cam-btn">🔄 Automatic Alpha Animation</button>
       <button id="zoomCiMCEx" class="mt-2 w-full bg-[#ff2a2a] hover:bg-[#ff5555] border border-[#ff6b6b] text-white py-2 rounded-xl text-sm font-medium">CiM → CEx</button>
     </div>
   </div>
 </aside>
 
 <div id="legend-float" class="fixed right-6 bottom-6 z-20 text-[11.5px] text-[#8292b0] bg-[#<div id="legend-float" class="fixed right-6 bottom-6 z-20 text-[11.5px] text-[#8292b0] bg-[#0c111b]/70 backdrop-blur-md border-white/[0.07] rounded-2xl px-4 py-3 leading-relaxed shadow-xl">
-  <div class="font-bold text-[#bdcbe6] mb-1">Tríades Alpha</div>
-  <div><span class="legend-dot" style="background:#bfcfe6"></span> Tríade A – α1, α2, α3</div>
-  <div><span class="legend-dot" style="background:#bfcfe6"></span> Tríade B – α4, α5, α6</div>
-  <div><span class="legend-dot" style="background:#bfcfe6"></span> Tríade C – α7, α8, α9</div>
-  <div><span class="legend-dot" style="background:#bfcfe6"></span> Tríade D – α10, α11, α12</div>
+  <div class="font-bold text-[#bdcbe6] mb-1">Alpha Triads</div>
+  <div><span class="legend-dot" style="background:#bfcfe6"></span> Triad A – α1, α2, α3</div>
+  <div><span class="legend-dot" style="background:#bfcfe6"></span> Triad B – α4, α5, α6</div>
+  <div><span class="legend-dot" style="background:#bfcfe6"></span> Triad C – α7, α8, α9</div>
+  <div><span class="legend-dot" style="background:#bfcfe6"></span> Triad D – α10, α11, α12</div>
 </div>
 
 <script type="module">
@@ -260,7 +260,7 @@ const triades = [
   { name:'D', indices:[3,6,10], color: 0xffe06b }
 ];
 
-// Novas faces do cuboctaedro (8 triângulos + 6 quadrados aproximados) - CORRIGIDO
+// New cuboctahedron faces (8 triangles + 6 approximate squares) - FIXED
 const cuboFaces = [
   // Triângulos - 8 faces completas
   {indices: [0,4,8], color: 0xff6b6b, opacity: 0.22}, // A
@@ -268,7 +268,7 @@ const cuboFaces = [
   {indices: [1,4,10], color: 0x88aaff, opacity: 0.22},
   {indices: [1,5,11], color: 0x6bff8a, opacity: 0.22}, // B
   {indices: [2,6,8], color: 0x88aaff, opacity: 0.22},
-  {indices: [2,7,9], color: 0x6bafff, opacity: 0.22}, // C (corrigido de [2,9,7])
+  {indices: [2,7,9], color: 0x6bafff, opacity: 0.22}, // C (fixed from [2,9,7])
   {indices: [3,6,10], color: 0xffe06b, opacity: 0.22}, // D
   {indices: [3,7,11], color: 0x88aaff, opacity: 0.22},
   
@@ -295,7 +295,7 @@ let currentMeridians = 36;
 let currentDistance = 1.7320508075688772;
 let currentMeronCount = 1;
 let currentInterMeronDist = 0;
-// polarity removida
+// polarity removed
 let meronParent = [], meronParentTri = [];
 let autoVaryAlpha = false;
 let varyDirection = 1;
@@ -309,9 +309,6 @@ function updateFaceOpacity(val){
     if(mesh.material){
       mesh.material.opacity = faceOpacityValue;
       mesh.material.transparent = true;
-      mesh.material.depthWrite = false;
-      mesh.material.depthTest = true;
-      mesh.material.alphaTest = 0.05;
     }
   });
 }
@@ -327,9 +324,9 @@ function updateMeronInfo(n){
   const name = MERON_NAMES[n-1];
   const compalphas = 9*n + 3;
   const massa = n;
-  const info = `Méron ${name} (${compalphas} Ca) – Massa ${massa}`;
+  const info = `Meron ${name} (${compalphas} Ca) – Mass ${massa}`;
   document.getElementById('meronInfo').textContent = info;
-  document.getElementById('meronCountVal').textContent = `${n} ${n===1?'Méron':'Mérons'}`;
+  document.getElementById('meronCountVal').textContent = `${n} ${n===1?'Meron':'Merons'}`;
 }
 
 
@@ -431,10 +428,7 @@ function createFaceMesh(face, scale) {
     transparent: true,
     opacity: face.opacity,
     side: THREE.DoubleSide,
-    depthWrite: false,
-    polygonOffset: true,
-    polygonOffsetFactor: -1,
-    polygonOffsetUnits: -1
+    depthWrite: false
   });
   
   return new THREE.Mesh(geometry, material);
@@ -444,7 +438,7 @@ function buildMeronGroup(meronIndex = 0) {
   const group = new THREE.Group();
   const mEdgeGroup = new THREE.Group(); 
   const mTriadeGroup = new THREE.Group();
-  const mFaceGroup = new THREE.Group(); // Novo grupo para faces translúcidas
+  const mFaceGroup = new THREE.Group(); // New group for translucent faces
   
   group.add(mEdgeGroup); 
   group.add(mTriadeGroup);
@@ -490,20 +484,20 @@ function buildMeronGroup(meronIndex = 0) {
     });
   });
   
-  // Criar faces translúcidas - cores por nível merônico
+  // Create translucent faces - colors by meronic level
   const scale = currentDistance / 110;
   let meronColor, meronOpacity;
   if (meronIndex === 0) {
-    // Metalpha - branco translúcido
+    // Metalpha - translucent white
     meronColor = 0xffffff; meronOpacity = 0.45;
   } else if (meronIndex >= 1 && meronIndex <= 4) {
-    // Pentalpha - lilás translúcido
+    // Pentalpha - translucent lilac
     meronColor = 0x8A2BE2; meronOpacity = 0.50;
   } else if (meronIndex >= 5 && meronIndex <= 8) {
-    // Nonalpha - azul translúcido
+    // Nonalpha - translucent blue
     meronColor = 0x0000FF; meronOpacity = 0.55;
   } else {
-    // Eneicosalpha - verde translúcido
+    // Heneicosalpha - translucent green
     meronColor = 0x00FF00; meronOpacity = 0.60;
   }
   
@@ -596,7 +590,7 @@ function updateLocalGeometries() {
 }
 
 function applySpinsAndPolarities() {
-  // função mantida vazia após remoção da inversão de polaridade
+  // function kept empty after removal of polarity inversion
   meronGroups.forEach((mg) => {
     mg.userData.localComps.forEach((comp) => {
       comp.quaternion.copy(comp.userData.baseQuat);
@@ -694,7 +688,7 @@ function updateAlphaDistance(value) {
   updateLocalGeometries();
 }
 
-// Câmera
+// Camera
 const camPositions = {
   geral: new THREE.Vector3(380, -320, 260).normalize(),
   topo: new THREE.Vector3(0, 0, 1),
@@ -738,7 +732,7 @@ function animateCamera(startPos, endPos, duration) {
   requestAnimationFrame(update);
 }
 
-// Salvar / Carregar
+// Save / Load
 function saveConfig() {
   const config = {
     currentDistance, currentInterMeronDist, currentMeridians, currentMeronCount,
@@ -752,12 +746,12 @@ function saveConfig() {
     rotateSpeed
   };
   localStorage.setItem('meronConfig', JSON.stringify(config));
-  alert('✅ Configurações salvas com sucesso!');
+  alert('✅ Settings saved successfully!');
 }
 
 function loadConfig() {
   const saved = localStorage.getItem('meronConfig');
-  if (!saved) return alert('Nenhuma configuração salva.');
+  if (!saved) return alert('No saved configuration.');
   const c = JSON.parse(saved);
   currentDistance = 1.7320508075688772;
   currentInterMeronDist = c.currentInterMeronDist || 0;
@@ -766,41 +760,41 @@ function loadConfig() {
   document.getElementById('interMeronDistVal').textContent = currentInterMeronDist.toFixed(1);
   if (c.showFaces !== undefined) document.getElementById('showFaces').checked = c.showFaces;
   buildUniverse();
-  alert('✅ Configurações carregadas!');
+  alert('✅ Settings loaded!');
 }
 
-// Animação automática
+// Automatic animation
 document.getElementById('autoVaryBtn').addEventListener('click', () => {
   autoVaryAlpha = !autoVaryAlpha;
   const btn = document.getElementById('autoVaryBtn');
   if (autoVaryAlpha) {
-    btn.textContent = '⏹ Parar Animação';
+    btn.textContent = '⏹ Stop Animation';
     varyInterval = setInterval(() => {
       let newVal = currentDistance + varyDirection * 1.5;
       if (newVal > 280 || newVal < 30) varyDirection *= -1;
       updateAlphaDistance(newVal);
     }, 35);
   } else {
-    btn.textContent = '🔄 Animação Automática Alpha';
+    btn.textContent = '🔄 Automatic Alpha Animation';
     clearInterval(varyInterval);
   }
 });
 
-// Inicialização
+// Initialization
 createMeronCountUI();
 updateMeronInfo(1);
 buildUniverse();
 
 const alphaSlider = document.getElementById('alphaDistance');
 
-// slider travado - sem evento
+// slider locked - no event
 
 document.getElementById('saveConfig').addEventListener('click', saveConfig);
 document.getElementById('loadConfig').addEventListener('click', loadConfig);
 
 document.getElementById('rotateToggle').addEventListener('click', e => { 
   window.autoRotate =!window.autoRotate; 
-  e.target.textContent = window.autoRotate? 'Pausar' : 'Retomar'; 
+  e.target.textContent = window.autoRotate? 'Pause' : 'Resume'; 
 });
 window.autoRotate = true;
 document.getElementById('rotateSpeed').addEventListener('input', e => { 
@@ -816,7 +810,7 @@ document.getElementById('interMeronDist').addEventListener('input', e => {
 
 document.getElementById('faceOpacity').addEventListener('input', e => { updateFaceOpacity(e.target.value); });
 
-// autoAlign removido
+// autoAlign removed
 document.getElementById('showLabels').addEventListener('change', updateLabelVisibility);
 document.getElementById('showVectors').addEventListener('change', updateVectorVisibility);
 document.getElementById('showEdges').addEventListener('change', e => meronGroups.forEach(mg => mg.userData.edgeGroup.visible = e.target.checked));
@@ -829,7 +823,7 @@ document.querySelectorAll('input[name="meridians"]').forEach(r => r.addEventList
 document.getElementById('emphasizeMeridians').addEventListener('change', updateEmphasis);
 document.querySelectorAll('.layer-toggle').forEach(cb => cb.addEventListener('change', updateLayerVisibility));
 
-// polaridade removida
+// polarity removed
 function animate(){
   requestAnimationFrame(animate);
   if(window.autoRotate) universeGroup.rotation.y += rotateSpeed;
