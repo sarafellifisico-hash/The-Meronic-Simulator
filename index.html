@@ -128,8 +128,44 @@
       </div>
 
     <div class="divider"></div>
-	  
+
 	  <div>
+      <div class="sec-title mb-2">Cuboctahedrons Opacity</div>
+      <div class="flex items-center justify-between mb-1">
+        <span class="text-[12.5px] text-[#9baacc]">Transparency of meronic layers</span>
+        <span class="mono text-[13px] text-[#d6e3ff]" id="faceOpacityVal">0.50</span>
+      </div>
+      <input type="range" id="faceOpacity" min="0.05" max="1" step="0.01" value="0.5">
+      <div class="hint mt-1">Keeps colors: white, violet, blue, green.</div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div>
+      <div class="sec-title mb-2">Number of Compalpha Meridians</div>
+<div class="flex gap-2 flex-wrap">
+  <label class="chip">
+    <input type="radio" name="meridians" value="12" class="sr-only">
+    <span>12</span>
+  </label>
+  <label class="chip">
+    <input type="radio" name="meridians" value="18" class="sr-only">
+    <span>18</span>
+  </label>
+  <label class="chip">
+    <input type="radio" name="meridians" value="36" class="sr-only" checked>
+    <span>36</span>
+  </label>
+</div>
+<label class="flex items-center gap-3 cursor-pointer mt-4 text-[13.5px]">
+  <input type="checkbox" id="emphasizeMeridians" class="check">
+  <span>Highlight Meridians</span>
+</label>
+    </div>
+	  
+	<div class="divider"></div>
+	  
+	<div>
       <div class="sec-title mb-3">Meronic Rotation</div>
       <div class="flex items-center gap-3 mb-3">
         <button id="rotateToggle" class="btn-primary">Pause</button>
@@ -192,42 +228,6 @@
     <div class="divider"></div>
 
     <div>
-      <div class="sec-title mb-2">Cuboctahedrons Opacity</div>
-      <div class="flex items-center justify-between mb-1">
-        <span class="text-[12.5px] text-[#9baacc]">Transparency of meronic layers</span>
-        <span class="mono text-[13px] text-[#d6e3ff]" id="faceOpacityVal">0.50</span>
-      </div>
-      <input type="range" id="faceOpacity" min="0.05" max="1" step="0.01" value="0.5">
-      <div class="hint mt-1">Keeps colors: white, violet, blue, green.</div>
-    </div>
-
-    <div class="divider"></div>
-
-    <div>
-      <div class="sec-title mb-2">Number of Compalpha Meridians</div>
-<div class="flex gap-2 flex-wrap">
-  <label class="chip">
-    <input type="radio" name="meridians" value="12" class="sr-only">
-    <span>12</span>
-  </label>
-  <label class="chip">
-    <input type="radio" name="meridians" value="18" class="sr-only">
-    <span>18</span>
-  </label>
-  <label class="chip">
-    <input type="radio" name="meridians" value="36" class="sr-only" checked>
-    <span>36</span>
-  </label>
-</div>
-<label class="flex items-center gap-3 cursor-pointer mt-4 text-[13.5px]">
-  <input type="checkbox" id="emphasizeMeridians" class="check">
-  <span>Highlight Meridians</span>
-</label>
-    </div>
-
-    <div class="divider"></div>
-
-	<div>
       <div class="sec-title mb-3">Camera Position</div>
       <div class="flex flex-wrap gap-2">
         <button class="cam-btn" data-cam="geral">General View</button>
